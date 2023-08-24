@@ -60,8 +60,8 @@ void pk_pchar(stack_t **stack, unsigned int line_number);
 void pk_pstr(stack_t **stack, unsigned int line_number);
 void pk_rotl(stack_t **stack, unsigned int line_number);
 void pk_rotr(stack_t **stack, unsigned int line_number);
-int error_ussage(int drapeau);
+int error_usage(int drapeau);
 int open_error(char *filename);
-int f_errors(int drapeau, unsigned int linenum);
+int show_f_errors(int drapeau, unsigned int linenum);
 
 #endif /* __MONTY_H__ */

@@ -11,7 +11,7 @@ void pk_pint(stack_t **stack, unsigned int line_number)
 
 	if (!tmp)
 	{
-		f_errors(1, line_number);
+		show_f_errors(1, line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -30,7 +30,7 @@ void pk_pop(stack_t **stack, unsigned int line_number)
 
 	if (!tmp)
 	{
-		f_errors(2, line_number);
+		show_f_errors(2, line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -51,7 +51,7 @@ void pk_swap(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		f_errors(3, line_number);
+		show_f_errors(3, line_number);
 		exit(EXIT_FAILURE);
 	}
 	tmp = (*stack)->next->n;
@@ -72,7 +72,7 @@ void pk_add(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		f_errors(4, line_number);
+		show_f_errors(4, line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->n + (*stack)->next->n;
@@ -94,7 +94,7 @@ void pk_sub(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		f_errors(5, line_number);
+		show_f_errors(5, line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->next->n - (*stack)->n;

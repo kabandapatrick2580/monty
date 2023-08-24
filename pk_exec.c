@@ -56,7 +56,7 @@ int pk_push(stack_t **stack, char **tokenizer, unsigned int linenum)
 	int i = 0;
 
 	if (tokenizer[1] == NULL)
-		return (f_errors(0, linenum));
+		return (show_f_errors(0, linenum));
 	while (tokenizer[1][i])
 	{
 		if (tokenizer[1][i] == '-' && i == 0)
@@ -67,14 +67,14 @@ int pk_push(stack_t **stack, char **tokenizer, unsigned int linenum)
 		if (tokenizer[1][i] < '0' || tokenizer[1][i] > '9')
 		{
 			stck_free(stack);
-			return (f_errors(0, linenum));
+			return (show_f_errors(0, linenum));
 		}
 		i++;
 	}
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		return (error_ussage(0));
+		return (error_usage(0));
 
 	new->n = atoi(tokenizer[1]);
 	if ((*stack) != NULL)
@@ -98,7 +98,7 @@ int pk_pushq(stack_t **stack, char **tokenizer, unsigned int linenum)
 	int i = 0;
 
 	if (tokenizer[1] == NULL)
-		return (f_errors(0, linenum));
+		return (show_f_errors(0, linenum));
 	while (tokenizer[1][i])
 	{
 		if (tokenizer[1][i] == '-' && i == 0)
@@ -109,13 +109,13 @@ int pk_pushq(stack_t **stack, char **tokenizer, unsigned int linenum)
 		if (tokenizer[1][i] < '0' || tokenizer[1][i] > '9')
 		{
 			stck_free(stack);
-			return (f_errors(0, linenum));
+			return (show_f_errors(0, linenum));
 		}
 		i++;
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		return (error_ussage(0));
+		return (error_usage(0));
 	new->next = NULL;
 	new->prev = NULL;
 	new->n = atoi(tokenizer[1]);

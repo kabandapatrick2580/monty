@@ -13,7 +13,7 @@ void pk_mul(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		f_errors(8, line_number);
+		show_f_errors(8, line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->n * (*stack)->next->n;
@@ -35,12 +35,12 @@ void pk_div(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		f_errors(6, line_number);
+		show_f_errors(6, line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n == 0)
 	{
-		f_errors(7, line_number);
+		show_f_errors(7, line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->next->n / (*stack)->n;
@@ -62,12 +62,12 @@ void pk_mod(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		f_errors(9, line_number);
+		show_f_errors(9, line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n == 0)
 	{
-		f_errors(7, line_number);
+		show_f_errors(7, line_number);
 		exit(EXIT_FAILURE);
 	}
 	temp = (*stack)->next->n % (*stack)->n;
@@ -87,13 +87,13 @@ void pk_pchar(stack_t **stack, unsigned int line_number)
 
 	if (!tmp)
 	{
-		f_errors(11, line_number);
+		show_f_errors(11, line_number);
 		exit(EXIT_FAILURE);
 	}
 	number = tmp->n;
 	if (number < 0 || number > 127)
 	{
-		f_errors(10, line_number);
+		show_f_errors(10, line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", tmp->n);

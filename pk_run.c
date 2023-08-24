@@ -31,7 +31,7 @@ int pk_run(FILE *dp)
         else if (strcmp(token[0], "push") == 0 && mode == 0)
             exit_status = pk_pushq(&stack, token, linenum);
         else if (strcmp(token[0], "push") == 0 && mode == 1)
-            exit_status = pk_push(&stack, token, linenum);
+            exit_status = pk_pushq(&stack, token, linenum);
         else
             exit_status = execute(token, &stack, linenum);
         free(token);
